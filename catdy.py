@@ -50,7 +50,7 @@ def _isretail(dirname):
 
 
 def _istv(dirname):
-    return match('(A?DSR(RIP)?|A?[HPS]DTV(RIP)?|TVRIP|WEB(\-?DL|HD(RIP)?|RIP)?)', dirname)
+    return match('(A?DSR(RIP)?|A?[HPS]?DTV(RIP)?|TVRIP|WEB(\-?DL|HD(RIP)?|RIP)?)', dirname)
 
 
 def _ishd(dirname):
@@ -144,7 +144,7 @@ def video(dirname):
 
     if match('[HX][._-]?264', dirname):
         if isretail and ishd and isseries:
-            return 'X264-SERIES-HD'
+            return 'X264-HD-SERIES'
         elif isretail and isseries:
             return 'X264-SERIES'
         elif istv and not isretail and ishd:
@@ -158,7 +158,7 @@ def video(dirname):
 
     if match('[HX][._-]?265', dirname):
         if isretail and ishd and isseries:
-            return 'X265-SERIES-HD'
+            return 'X265-HD-SERIES'
         elif isretail and isseries:
             return 'X265-SERIES'
         elif istv and not isretail and ishd:
@@ -178,7 +178,7 @@ def video(dirname):
 
     if match('WMV(\-?HD)?', dirname):
         if isretail and ishd and isseries:
-            return 'WMV-SERIES-HD'
+            return 'WMV-HD-SERIES'
         elif isretail and isseries:
             return 'WMV-SERIES'
         elif istv and not isretail and ishd:
