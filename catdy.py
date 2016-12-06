@@ -54,7 +54,7 @@ def _istv(dirname):
 
 
 def _ishd(dirname):
-    return match('(720P|1080P|2160P)', dirname)
+    return match('(720|1080|2160)[IP]', dirname)
 
 
 def _isseries(dirname):
